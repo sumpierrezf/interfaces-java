@@ -1,0 +1,46 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+abstract class SistemaArmas{
+- energia: int
++{abstract}mostrar():void
++{abstract}defender():void
++{abstract}atacar():void
+}
+
+class Senuelo{
+- energia: int
++ mostrar():void
+}
+
+RobotPesado -u-|> SistemaArmas
+RobotLiviano -u-|> SistemaArmas
+Tanque -u-|> SistemaArmas
+
+class RobotPesado{
++ mostrar():void
++defender():void
++atacar():void
+}
+
+class RobotLiviano{
++ mostrar():void
++defender():void
++atacar():void
+}
+
+class Tanque{
++ mostrar():void
++defender():void
++atacar():void
+}
+
+RobotLiviano ..|> volador
+RobotPesado ..|> volador
+
+interface volador{
++volar():void
+}
+
+
+@enduml
